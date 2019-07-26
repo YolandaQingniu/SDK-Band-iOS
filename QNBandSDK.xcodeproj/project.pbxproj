@@ -17,7 +17,6 @@
 		D21301DF22EAE595007077EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21301DD22EAE595007077EA /* LaunchScreen.storyboard */; };
 		D21301E222EAE595007077EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D21301E122EAE595007077EA /* main.m */; };
 		D213022F22EAE902007077EA /* 123456789.qn in Resources */ = {isa = PBXBuildFile; fileRef = D213022E22EAE902007077EA /* 123456789.qn */; };
-		D213027C22EAF5E6007077EA /* QNBandSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D213027B22EAF5E6007077EA /* QNBandSDK.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,7 +72,6 @@
 		D21301E022EAE595007077EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21301E122EAE595007077EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D213022E22EAE902007077EA /* 123456789.qn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 123456789.qn; sourceTree = "<group>"; };
-		D213027B22EAF5E6007077EA /* QNBandSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = QNBandSDK.podspec; path = "../../../../../../System/Volumes/Data/Users/donyau/Yolanda/program/SDK/SDK-Band-iOS/QNBandSDK.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,6 @@
 		D21301AA22EADEC6007077EA = {
 			isa = PBXGroup;
 			children = (
-				D213027B22EAF5E6007077EA /* QNBandSDK.podspec */,
 				D21301D122EAE595007077EA /* QNBandSDKDemo */,
 				D213028322EAF7F9007077EA /* QNBandSDK */,
 				D21301B422EADEC6007077EA /* Products */,
@@ -228,7 +225,6 @@
 				D21301DF22EAE595007077EA /* LaunchScreen.storyboard in Resources */,
 				D21301DC22EAE595007077EA /* Assets.xcassets in Resources */,
 				D213022F22EAE902007077EA /* 123456789.qn in Resources */,
-				D213027C22EAF5E6007077EA /* QNBandSDK.podspec in Resources */,
 				D20DE17D22EAFE3F0059C069 /* updateRemind.md in Resources */,
 				D21301DA22EAE595007077EA /* Main.storyboard in Resources */,
 			);
