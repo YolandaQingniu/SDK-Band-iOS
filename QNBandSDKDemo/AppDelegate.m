@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "QNDeviceSDK.h"
+#import "ScanVC.h"
+#import "SetListVC.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    NSString *bindMac = [[NSUserDefaults standardUserDefaults] objectForKey:QNBandBindMac];
+    UINavigationController *nav = nil;
+    if (bindMac == nil) {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[ScanVC alloc] init]];
+    }else {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[SetListVC alloc] init]];
+    }
+    
+    self.window.rootViewController = nav;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     QNConfig *config = [[QNBleApi sharedBleApi] getConfig];
     config.showPowerAlertKey = YES;
 

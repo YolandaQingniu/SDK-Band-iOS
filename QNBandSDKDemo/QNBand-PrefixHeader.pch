@@ -1,0 +1,23 @@
+//
+//  QNBand-PrefixHeader.pch
+//  QNBandSDK
+//
+//  Created by donyau on 2019/7/26.
+//  Copyright © 2019 Yolanda. All rights reserved.
+//
+
+#ifndef QNBand_PrefixHeader_pch
+#define QNBand_PrefixHeader_pch
+
+#import "QNDeviceSDK.h"
+#import "Masonry.h"
+
+
+#define QNMinTopOffset (CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + 44 + 10)
+#define QNAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define QNBandBindMac @"bindMac"
+#define QNBandBindModeId @"bindModeId"
+#define QNBandBindUUID @"bindUUID"
+
+#endif /* QNBand_PrefixHeader_pch */

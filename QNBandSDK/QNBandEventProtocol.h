@@ -12,7 +12,7 @@
 typedef NS_ENUM(NSUInteger, QNBandExerciseStatus) {
     QNBandBindPauseExercise = 1, //设备端暂停锻炼
     QNBandBindContinueExercise = 2, //设备端继续锻炼
-    QNBandBindEndExercise , //设备端结束锻炼
+    QNBandBindEndExercise = 3 , //设备端结束锻炼
 };
 
 
