@@ -61,6 +61,8 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
 
 /**
  手环的固件版本、软件版本、电量
+ 
+ 该方法不受绑定绑定的影响，即未绑定时也可以使用
 
  @param callblock 结果的回调 void(^QNObjCallback) (QNBandInfo *info, NSError *error)
  */

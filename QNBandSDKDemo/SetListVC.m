@@ -210,22 +210,20 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
 #pragma mark -
 - (void)exerciseModeCellSelect:(QNExerciseStatus)status {
     self.exerciseStatus = status;
-    [self exerciseTypeCellSelect:self.exerciseType];
+    [[[QNBleApi sharedBleApi] getBandManager] setExerciseStatus:status exerciseType:self.exerciseType callback:^(NSError *error) {
+        [self alertError:error];
+    }];
 }
 
 - (void)exerciseTypeCellSelect:(QNBandExerciseType)type {
-    if (self.exerciseStatus != QNExerciseStatusFinish) {
-        [self alertMessage:@"先结束上一锻炼模式"];
-        [self.tableView reloadData];
-        return;
-    }
-    
+//    if (self.exerciseStatus != QNExerciseStatusFinish) {
+//        [self alertMessage:@"先结束上一锻炼模式"];
+//        [self.tableView reloadData];
+//        return;
+//    }
     self.exerciseType = type;
-    self.exerciseStatus = QNExerciseStatusFinish;
-    
-    [[[QNBleApi sharedBleApi] getBandManager] setExerciseStatus:self.exerciseStatus exerciseType:type callback:^(NSError *error) {
-        [self alertError:error];
-    }];
+    [self exerciseModeCellSelect:self.exerciseStatus];
+
 }
 
 - (void)healthDateTypeSelectWithToday:(BOOL)isToday {
