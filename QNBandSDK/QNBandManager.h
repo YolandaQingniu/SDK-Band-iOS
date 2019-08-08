@@ -16,6 +16,7 @@
 #import "QNCleanInfo.h"
 #import "QNBandBaseConfig.h"
 #import "QNHealthData.h"
+#import "QNRealTimeData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -48,9 +49,9 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
 /**
  设备解绑时，需要调用该方法
 
- @param callblock 结果的回调
+ @param callblock 结果的回调 void(^QNObjCallback) (NSNumber *success, NSError *error)
  */
-- (void)cancelBindCallback:(QNResultCallback)callblock;
+- (void)cancelBindWithUserId:(NSString *)userId callback:(QNObjCallback)callblock;
 
 /**
  检测手环的上次
@@ -189,11 +190,11 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
 - (void)syncFastSetting:(QNBandBaseConfig *)baseConifg callback:(QNResultCallback)callblock;
 
 /**
- 获取实时心率
+ 获取实时数据
 
- @param callblock 结果的回调 void(^QNObjCallback) (int heartrate, NSError *error)
+ @param callblock 结果的回调 void(^QNObjCallback) (QNRealTimeData *data, NSError *error)
  */
-- (void)syncRealTimeHeartRateCallback:(QNObjCallback)callblock;
+- (void)syncRealTimeDataCallback:(QNObjCallback)callblock;
 
 
 /**

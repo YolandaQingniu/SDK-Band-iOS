@@ -15,6 +15,8 @@
 #define QNCellTitle @"title"
 #define QNCellType @"type"
 
+#define QNUserId @"1234567"
+
 typedef NS_ENUM(NSUInteger, QNBandSetType) {
     
     QNBandSetBind = 0,
@@ -131,7 +133,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     if ([device.mac isEqualToString:mac] == NO) return;
     self.currentBand = device;
     QNUser *user = [[QNUser alloc] init];
-    user.userId = @"123456";
+    user.userId = QNUserId;
     user.height = 170;
     user.gender = @"female";
     user.birthday = [NSDate dateWithTimeIntervalSince1970:649043924];
@@ -255,7 +257,8 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     switch (type) {
         case QNBandSetBind:
         {
-            [bandManager bindBandWithUserId:@"123456" onConfirmBind:^{
+            //当回复被其他人绑定后手环端会自动断开
+            [bandManager bindBandWithUserId:QNUserId onConfirmBind:^{
                 [self alertMessage:@"请在手环上确认绑定"];
             } onStatusResult:^(QNBandBindStatus bindStatus, NSError *error) {
                 if (bindStatus != QNBandBindStatusUnknow) {
@@ -282,17 +285,20 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
             
         case QNBandSetCancelBind:
         {
-            [bandManager cancelBindCallback:^(NSError *error) {
-                [self alertError:error];
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:QNBandBindMac];
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:QNBandBindModeId];
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:QNBandBindUUID];
-                if (self.currentBand) {
-                    [[QNBleApi sharedBleApi] disconnectDevice:self.currentBand callback:^(NSError *error) {
-                        
-                    }];
+            [bandManager cancelBindWithUserId:QNUserId callback:^(id obj, NSError *error) {
+                if ([obj boolValue] == NO) {
+                    [self alertMessage:@"解绑失败"];
+                }else {
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:QNBandBindMac];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:QNBandBindModeId];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:QNBandBindUUID];
+                    if (self.currentBand) {
+                        [[QNBleApi sharedBleApi] disconnectDevice:self.currentBand callback:^(NSError *error) {
+                            
+                        }];
+                    }
+                    [UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ScanVC alloc] init]];
                 }
-                [UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ScanVC alloc] init]];
             }];
             break;
         }
@@ -359,7 +365,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
         case QNBandSetUser:
         {
             QNUser *user = [[QNUser alloc] init];
-            user.userId = @"123456";
+            user.userId = QNUserId;
             user.height = 170;
             user.weight = 60;
             user.gender = @"female";
@@ -449,7 +455,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
             config.lostRemind = YES;
             
             QNUser *user = [[QNUser alloc] init];
-            user.userId = @"123456";
+            user.userId = QNUserId;
             user.height = 170;
             user.gender = @"female";
             user.birthday = [NSDate dateWithTimeIntervalSince1970:649043924];
@@ -500,11 +506,12 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
         }
         case QNBandSetRealTimeHealthData:
         {
-            [bandManager syncRealTimeHeartRateCallback:^(id obj, NSError *error) {
+            [bandManager syncRealTimeDataCallback:^(id obj, NSError *error) {
                 if (error) {
                     [self alertError:error];
                 }else {
-                    [self alertMessage:[NSString stringWithFormat:@"当前心率 %ld",(long)[obj integerValue]]];
+                    QNRealTimeData *data = (QNRealTimeData*)obj;
+                    [self alertMessage:[NSString stringWithFormat:@"步数: %ld 距离:%lu 卡路里: %lu 运动时间: %lu 心率: %lu",data.step,(unsigned long)data.distance,(unsigned long)data.calories,(unsigned long)data.active,(unsigned long)data.heartRate]];
                 }
             }];
             break;
