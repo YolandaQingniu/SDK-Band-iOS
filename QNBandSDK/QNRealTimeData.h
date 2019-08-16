@@ -13,14 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QNRealTimeData : NSObject
 /// 步数
 @property(nonatomic, assign) NSUInteger step;
-/// 卡路里
+/// 卡路里，单位千卡
 @property(nonatomic, assign) NSUInteger calories;
-/// 运动距离
+/// 运动距离，单位米
 @property(nonatomic, assign) NSUInteger distance;
 /// 运动时间，单位分钟
 @property(nonatomic, assign) NSUInteger active;
 /// 心率数据
 @property(nonatomic, assign) NSUInteger heartRate;
+/// 睡眠数据，单位分钟
+@property(nonatomic, assign) NSUInteger sleep;
 @end
 
 NS_ASSUME_NONNULL_END

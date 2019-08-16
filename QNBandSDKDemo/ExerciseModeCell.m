@@ -2,7 +2,7 @@
 //  ExerciseModeCell.m
 //  QNBandSDKDemo
 //
-//  Created by donyau on 2019/7/27.
+//  Created by Yolanda on 2019/7/27.
 //  Copyright © 2019 Yolanda. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  SetListVC.m
 //  QNBandSDKDemo
 //
-//  Created by donyau on 2019/7/26.
+//  Created by Yolanda on 2019/7/26.
 //  Copyright © 2019 Yolanda. All rights reserved.
 //
 
@@ -88,7 +88,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
                         @{QNCellTitle:@"拍照模式", QNCellType: @(QNBandSetTakePhoto)},
                         @{QNCellTitle:@"清除设置", QNCellType: @(QNBandSetClean)},
                         @{QNCellTitle:@"重启", QNCellType: @(QNBandSetRestart)},
-                        @{QNCellTitle:@"实时获取心率", QNCellType: @(QNBandSetRealTimeHealthData)},
+                        @{QNCellTitle:@"获取实时数据", QNCellType: @(QNBandSetRealTimeHealthData)},
                         @{QNCellTitle:@"锻炼模式", QNCellType: @(QNBandSetExercise)},
                         @{QNCellTitle:@"更新锻炼数据(锻炼类型由上一列选择)", QNCellType: @(QNBandSetExerciseData)},
                         @{QNCellTitle:@"健康数据", QNCellType: @(QNBandSetHealthData)},
@@ -511,7 +511,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
                     [self alertError:error];
                 }else {
                     QNRealTimeData *data = (QNRealTimeData*)obj;
-                    [self alertMessage:[NSString stringWithFormat:@"步数: %ld 距离:%lu 卡路里: %lu 运动时间: %lu 心率: %lu",data.step,(unsigned long)data.distance,(unsigned long)data.calories,(unsigned long)data.active,(unsigned long)data.heartRate]];
+                    [self alertMessage:[NSString stringWithFormat:@"步数: %ld 距离:%lu 卡路里: %lu 运动时间: %lu 心率: %lu 睡眠时间: %lu",data.step,(unsigned long)data.distance,(unsigned long)data.calories,(unsigned long)data.active,(unsigned long)data.heartRate,(unsigned long)data.sleep]];
                 }
             }];
             break;

@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  QNBandSDKDemo
 //
-//  Created by donyau on 2019/7/26.
+//  Created by Yolanda on 2019/7/26.
 //  Copyright © 2019 Yolanda. All rights reserved.
 //
 
