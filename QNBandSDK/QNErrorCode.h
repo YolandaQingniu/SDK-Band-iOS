@@ -43,6 +43,7 @@ typedef NS_ENUM(NSInteger, QNBleErrorCode) {
     QNBleErrorCodeUserWeight              = 1211, // weight错误
     QNBleErrorCodeDeviceUnconnectedDevice = 1212, //未连接设备
     QNBleErrorCodeDeviceSendCmdFail       = 1213, //发送命令失败
-    QNBleErrorCodeDeviceResponseOvertiion = 1214, //响应超时
+    QNBleErrorCodeDeviceResponseOverTime  = 1214, //响应超时
+    QNBleErrorCodeExerciseModeModify      = 1215, //运动模式切换失败
 
 };

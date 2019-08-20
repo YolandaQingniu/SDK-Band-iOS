@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'QNBandSDK'
-s.version          = '1.0.0-beta.10'
+s.version          = '1.0.0-beta.11'
 s.summary          = '轻牛手环SDK'
 
 s.description      = '支持轻牛新版手环'
