@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
 @interface QNBandManager : NSObject
 
 /** EventProtocol */
-@property (nonatomic, strong) id<QNBandEventListener> bandEventListener;
+@property (nonatomic, weak) id<QNBandEventListener> bandEventListener;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -232,6 +232,18 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  @param callback  结果的回调 (QNExerciseData *data, NSError *error)
  */
 - (void)sendExerciseData:(QNExerciseData *)exerciseData callblock:(QNObjCallback)callback;
+
+/**
+写入OTA数据
+
+@param data OTA数据
+*/
+- (nullable NSError *)writeOTAData:(NSData *)data;
+
+/**
+ 读取OTA数据状态
+ */
+- (nullable NSError *)readOTAStatus;
 
 /**
  同步今日数据

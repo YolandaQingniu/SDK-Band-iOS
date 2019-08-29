@@ -11,6 +11,7 @@
 #import "ScanVC.h"
 #import "ExerciseModeCell.h"
 #import "HealthDataCell.h"
+#import "OTAVC.h"
 
 #define QNCellTitle @"title"
 #define QNCellType @"type"
@@ -43,7 +44,8 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     
     QNBandSetExercise,
     QNBandSetExerciseData,
-    QNBandSetHealthData
+    QNBandSetHealthData,
+    QNBandOTA
 };
 
 @interface SetListVC ()<UITableViewDelegate,UITableViewDataSource,QNBleDeviceDiscoveryListener,QNBleConnectionChangeListener,ExerciseModeCellDelegate,HealthDataCellDelegate,QNBandEventListener>
@@ -92,6 +94,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
                         @{QNCellTitle:@"锻炼模式", QNCellType: @(QNBandSetExercise)},
                         @{QNCellTitle:@"更新锻炼数据(锻炼类型由上一列选择)", QNCellType: @(QNBandSetExerciseData)},
                         @{QNCellTitle:@"健康数据", QNCellType: @(QNBandSetHealthData)},
+                        @{QNCellTitle:@"OTA", QNCellType: @(QNBandOTA)},
                         ];
     
     [QNBleApi sharedBleApi].discoveryListener = self;
@@ -110,6 +113,11 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self startScan];
     });
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [QNBleApi sharedBleApi].getBandManager.bandEventListener = self;
 }
 
 - (void)startScan {
@@ -544,7 +552,13 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
             }];
             break;
         }
-
+        case QNBandOTA:
+        {
+            
+            OTAVC *vc = [[OTAVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
         default: break;
     }
 }

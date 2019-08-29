@@ -145,6 +145,10 @@ typedef NS_ENUM(NSUInteger, QNSleepStype) {
 @property (nonatomic, assign) NSUInteger minkm;
 /** 心率 */
 @property (nonatomic, assign) NSUInteger heartRate;
+/** 最小心率 */
+@property (nonatomic, assign) NSUInteger minHeartRate;
+/** 平均心率 */
+@property (nonatomic, assign) NSUInteger aveHeartRate;
 @end
 
 @interface QNExercise : NSObject

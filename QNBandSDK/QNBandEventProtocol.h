@@ -48,4 +48,12 @@ typedef NS_ENUM(NSUInteger, QNBandExerciseStatus) {
  */
 - (void)onExciseStatusWithExerciseStatus:(QNBandExerciseStatus)exerciseStatus exerciseType:(QNBandExerciseType)exerciseType device:(QNBleDevice *)device;
 
+/**
+ OTA数据写入回复监听
+ 
+ @param data 收到数据
+ @param device QNBleDevice
+ */
+- (void)receiveOTAData:(NSData *)data device:(QNBleDevice *)device;
+
 @end

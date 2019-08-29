@@ -1,0 +1,17 @@
+//
+//  OTAVC.h
+//  QNBandSDKDemo
+//
+//  Created by Yolanda on 2019/8/28.
+//  Copyright © 2019 Yolanda. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface OTAVC : UIViewController
+
+@end
+
+NS_ASSUME_NONNULL_END

@@ -1,3 +1,10 @@
+【 1.0.0-beta.12 】 2019-08-28
+1.  增加OTA写入数据方法 writeOTAData
+2.  增加读取OTA数据状态方法 readOTAStatus
+3.  增加OTA数据回复监听反复 receiveOTAData
+4.  增加QNExerciseItem类中 minHeartRate 
+5.  增加QNExerciseItem类中 aveHeartRate 
+
 【 1.0.0-beta.11 】 2019-08-20
 1.  修复运动模式状态返回错误的缺陷
 
