@@ -1,4 +1,10 @@
-【 1.0.0-beta.13 】 2019-08-9-01
+【 1.0.0-beta.14 】 2019-09-04
+1.  删除OTA写入数据方法 writeOTAData
+2.  删除读取OTA数据状态方法 readOTAStatus
+3.  删除OTA数据回复监听反复 receiveOTAData
+4. 增加OTA升级方法 startDfu
+
+【 1.0.0-beta.13 】 2019-09-01
 1.  修改同步数据时CPU使用率过高的情况
 
 【 1.0.0-beta.12 】 2019-08-28

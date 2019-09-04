@@ -45,5 +45,7 @@ typedef NS_ENUM(NSInteger, QNBleErrorCode) {
     QNBleErrorCodeDeviceSendCmdFail       = 1213, //发送命令失败
     QNBleErrorCodeDeviceResponseOverTime  = 1214, //响应超时
     QNBleErrorCodeExerciseModeModify      = 1215, //运动模式切换失败
+    QNBleErrorCodeFrimwareFile            = 1216, //手环固件文件异常
+    QNBleErrorCodeDfu                     = 1217, //手环OTA升级失败
 
 };

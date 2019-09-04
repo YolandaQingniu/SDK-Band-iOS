@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTAVC">
             <connections>
+                <outlet property="dfyLabel" destination="XDf-Cu-Nfr" id="fu5-LS-xBE"/>
                 <outlet property="progressView" destination="pgF-Gi-Ff3" id="dbl-tO-I5q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-Ol-tib">
-                    <rect key="frame" x="30" y="185" width="354" height="40"/>
+                    <rect key="frame" x="30" y="215" width="354" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Sje-xO-zSa"/>
                     </constraints>
@@ -36,15 +37,27 @@
                         <constraint firstAttribute="height" constant="5" id="V6v-FZ-ue3"/>
                     </constraints>
                 </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-Cu-Nfr">
+                    <rect key="frame" x="10" y="145" width="394" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="vV3-4f-6Er"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="pgF-Gi-Ff3" secondAttribute="trailing" constant="20" id="13J-YO-pOg"/>
+                <constraint firstItem="TqE-Ol-tib" firstAttribute="top" secondItem="XDf-Cu-Nfr" secondAttribute="bottom" constant="40" id="CPp-7t-COC"/>
                 <constraint firstItem="pgF-Gi-Ff3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="Px8-vn-ik9"/>
                 <constraint firstItem="pgF-Gi-Ff3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Q1E-va-iQJ"/>
-                <constraint firstItem="TqE-Ol-tib" firstAttribute="top" secondItem="pgF-Gi-Ff3" secondAttribute="bottom" constant="80" id="b4l-9D-Y84"/>
+                <constraint firstAttribute="trailing" secondItem="XDf-Cu-Nfr" secondAttribute="trailing" constant="10" id="TeC-ZO-gnT"/>
                 <constraint firstAttribute="trailing" secondItem="TqE-Ol-tib" secondAttribute="trailing" constant="30" id="enJ-Cu-dbW"/>
+                <constraint firstItem="XDf-Cu-Nfr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="gcN-EQ-rsu"/>
                 <constraint firstItem="TqE-Ol-tib" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="kCu-Lq-4SF"/>
+                <constraint firstItem="XDf-Cu-Nfr" firstAttribute="top" secondItem="pgF-Gi-Ff3" secondAttribute="bottom" constant="40" id="svh-Hn-vpZ"/>
             </constraints>
         </view>
     </objects>

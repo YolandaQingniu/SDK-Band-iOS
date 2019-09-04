@@ -233,17 +233,16 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  */
 - (void)sendExerciseData:(QNExerciseData *)exerciseData callblock:(QNObjCallback)callback;
 
-/**
-写入OTA数据
-
-@param data OTA数据
-*/
-- (nullable NSError *)writeOTAData:(NSData *)data;
 
 /**
- 读取OTA数据状态
+ OTA升级
+
+ @param firmwareFilePath 固件存放路径
+ @param progressCallback 升级进度回调
+ @param resultCallback 升级结果回调
  */
-- (nullable NSError *)readOTAStatus;
+- (void)startDfuWithFirmwareFilePath:(NSString *)firmwareFilePath progressCallback:(void (^)(NSUInteger progress))progressCallback resultCallback:(void (^)(NSError * _Nullable err))resultCallback;
+
 
 /**
  同步今日数据
