@@ -1,3 +1,6 @@
+【 1.0.0-beta.15 】 2019-09-05
+1.  优化手环连接方式
+
 【 1.0.0-beta.14 】 2019-09-04
 1.  删除OTA写入数据方法 writeOTAData
 2.  删除读取OTA数据状态方法 readOTAStatus
