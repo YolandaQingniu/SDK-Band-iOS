@@ -1,3 +1,6 @@
+【 1.0.0-beta.17 】 2019-09-10
+1. 修复未开启蓝牙时，发送指令的错误回调
+
 【 1.0.0-beta.16 】 2019-09-10
 1.  增加绑定状态 QNBandBindStatusBeginTouchBind、QNBandBindStatusStopTouchBind
 2. 增加中断绑定的方法 cancelBindBand

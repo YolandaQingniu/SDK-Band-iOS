@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3CFF8C2327D34D006BCDB3 /* libQNDeviceSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3CFF712327D349006BCDB3 /* libQNDeviceSDK.a */; };
+		1B3CFF8D2327D34D006BCDB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B3CFF772327D34A006BCDB3 /* README.md */; };
 		1B5530622316B122004FC1EE /* OTAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530602316B122004FC1EE /* OTAVC.m */; };
 		1B5530632316B122004FC1EE /* OTAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B5530612316B122004FC1EE /* OTAVC.xib */; };
 		1B59F79F22EE8EBD009A3919 /* ScanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B59F77A22EE8EBD009A3919 /* ScanVC.xib */; };
@@ -28,14 +30,12 @@
 		1B59F7AF22EE8EBD009A3919 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B59F79E22EE8EBD009A3919 /* AppDelegate.m */; };
 		1B59F7B422EE8ED2009A3919 /* ExerciseModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B59F7B122EE8ED2009A3919 /* ExerciseModeCell.m */; };
 		1B59F7B522EE8ED2009A3919 /* HealthDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B59F7B322EE8ED2009A3919 /* HealthDataCell.m */; };
-		1BD912022321373A00B45524 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1BD911F32321373800B45524 /* README.md */; };
-		1BD912032321373A00B45524 /* libQNDeviceSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD911F62321373900B45524 /* libQNDeviceSDK.a */; };
+		1B939D242327C35A00FA7B81 /* 123456789.qn in Resources */ = {isa = PBXBuildFile; fileRef = 1B939D232327C35A00FA7B81 /* 123456789.qn */; };
 		1BF622642317AA68005DD780 /* syd8811_band_v1.3.1.bin in Resources */ = {isa = PBXBuildFile; fileRef = 1BF622632317AA68005DD780 /* syd8811_band_v1.3.1.bin */; };
 		D20DE16022EAFE240059C069 /* libQNDeviceSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20DE15F22EAFE240059C069 /* libQNDeviceSDK.a */; };
 		D21301DC22EAE595007077EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21301DB22EAE595007077EA /* Assets.xcassets */; };
 		D21301DF22EAE595007077EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21301DD22EAE595007077EA /* LaunchScreen.storyboard */; };
 		D21301E222EAE595007077EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D21301E122EAE595007077EA /* main.m */; };
-		D213022F22EAE902007077EA /* 123456789.qn in Resources */ = {isa = PBXBuildFile; fileRef = D213022E22EAE902007077EA /* 123456789.qn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +52,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B3CFF702327D349006BCDB3 /* QNWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNWeek.h; sourceTree = "<group>"; };
+		1B3CFF712327D349006BCDB3 /* libQNDeviceSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQNDeviceSDK.a; sourceTree = "<group>"; };
+		1B3CFF722327D349006BCDB3 /* QNScaleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNScaleData.h; sourceTree = "<group>"; };
+		1B3CFF732327D349006BCDB3 /* QNErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNErrorCode.h; sourceTree = "<group>"; };
+		1B3CFF742327D349006BCDB3 /* QNRealTimeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRealTimeData.h; sourceTree = "<group>"; };
+		1B3CFF752327D34A006BCDB3 /* QNDeviceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDeviceSDK.h; sourceTree = "<group>"; };
+		1B3CFF762327D34A006BCDB3 /* QNSitRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSitRemind.h; sourceTree = "<group>"; };
+		1B3CFF772327D34A006BCDB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1B3CFF782327D34A006BCDB3 /* QNDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDataProtocol.h; sourceTree = "<group>"; };
+		1B3CFF792327D34A006BCDB3 /* QNConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNConfig.h; sourceTree = "<group>"; };
+		1B3CFF7A2327D34A006BCDB3 /* QNScaleStoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNScaleStoreData.h; sourceTree = "<group>"; };
+		1B3CFF7B2327D34B006BCDB3 /* QNBandMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandMetrics.h; sourceTree = "<group>"; };
+		1B3CFF7C2327D34B006BCDB3 /* QNAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNAlarm.h; sourceTree = "<group>"; };
+		1B3CFF7D2327D34B006BCDB3 /* QNBandInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandInfo.h; sourceTree = "<group>"; };
+		1B3CFF7E2327D34B006BCDB3 /* QNHealthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHealthData.h; sourceTree = "<group>"; };
+		1B3CFF7F2327D34B006BCDB3 /* QNCallBackConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCallBackConst.h; sourceTree = "<group>"; };
+		1B3CFF802327D34B006BCDB3 /* QNScaleItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNScaleItemData.h; sourceTree = "<group>"; };
+		1B3CFF812327D34B006BCDB3 /* QNBleApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleApi.h; sourceTree = "<group>"; };
+		1B3CFF822327D34C006BCDB3 /* QNBandEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandEventProtocol.h; sourceTree = "<group>"; };
+		1B3CFF832327D34C006BCDB3 /* QNThirdRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNThirdRemind.h; sourceTree = "<group>"; };
+		1B3CFF842327D34C006BCDB3 /* QNBleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleDevice.h; sourceTree = "<group>"; };
+		1B3CFF852327D34C006BCDB3 /* QNCleanInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCleanInfo.h; sourceTree = "<group>"; };
+		1B3CFF862327D34C006BCDB3 /* QNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUser.h; sourceTree = "<group>"; };
+		1B3CFF872327D34C006BCDB3 /* QNBleConnectionChangeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleConnectionChangeProtocol.h; sourceTree = "<group>"; };
+		1B3CFF882327D34D006BCDB3 /* QNBleStateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleStateProtocol.h; sourceTree = "<group>"; };
+		1B3CFF892327D34D006BCDB3 /* QNBandBaseConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandBaseConfig.h; sourceTree = "<group>"; };
+		1B3CFF8A2327D34D006BCDB3 /* QNBleDeviceDiscoveryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleDeviceDiscoveryProtocol.h; sourceTree = "<group>"; };
+		1B3CFF8B2327D34D006BCDB3 /* QNBandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandManager.h; sourceTree = "<group>"; };
 		1B55305F2316B122004FC1EE /* OTAVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTAVC.h; sourceTree = "<group>"; };
 		1B5530602316B122004FC1EE /* OTAVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTAVC.m; sourceTree = "<group>"; };
 		1B5530612316B122004FC1EE /* OTAVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTAVC.xib; sourceTree = "<group>"; };
@@ -97,34 +125,7 @@
 		1B59F7B122EE8ED2009A3919 /* ExerciseModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseModeCell.m; sourceTree = "<group>"; };
 		1B59F7B222EE8ED2009A3919 /* ExerciseModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseModeCell.h; sourceTree = "<group>"; };
 		1B59F7B322EE8ED2009A3919 /* HealthDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthDataCell.m; sourceTree = "<group>"; };
-		1BD911E62321373800B45524 /* QNCallBackConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCallBackConst.h; sourceTree = "<group>"; };
-		1BD911E72321373800B45524 /* QNThirdRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNThirdRemind.h; sourceTree = "<group>"; };
-		1BD911E82321373800B45524 /* QNWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNWeek.h; sourceTree = "<group>"; };
-		1BD911E92321373800B45524 /* QNCleanInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCleanInfo.h; sourceTree = "<group>"; };
-		1BD911EA2321373800B45524 /* QNScaleItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNScaleItemData.h; sourceTree = "<group>"; };
-		1BD911EB2321373800B45524 /* QNScaleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNScaleData.h; sourceTree = "<group>"; };
-		1BD911EC2321373800B45524 /* QNRealTimeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRealTimeData.h; sourceTree = "<group>"; };
-		1BD911ED2321373800B45524 /* QNBandInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandInfo.h; sourceTree = "<group>"; };
-		1BD911EE2321373800B45524 /* QNBleDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleDevice.h; sourceTree = "<group>"; };
-		1BD911EF2321373800B45524 /* QNBleConnectionChangeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleConnectionChangeProtocol.h; sourceTree = "<group>"; };
-		1BD911F02321373800B45524 /* QNBandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandManager.h; sourceTree = "<group>"; };
-		1BD911F12321373800B45524 /* QNErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNErrorCode.h; sourceTree = "<group>"; };
-		1BD911F22321373800B45524 /* QNDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDataProtocol.h; sourceTree = "<group>"; };
-		1BD911F32321373800B45524 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1BD911F42321373800B45524 /* QNBandMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandMetrics.h; sourceTree = "<group>"; };
-		1BD911F52321373800B45524 /* QNBleApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleApi.h; sourceTree = "<group>"; };
-		1BD911F62321373900B45524 /* libQNDeviceSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQNDeviceSDK.a; sourceTree = "<group>"; };
-		1BD911F72321373900B45524 /* QNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUser.h; sourceTree = "<group>"; };
-		1BD911F82321373900B45524 /* QNSitRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSitRemind.h; sourceTree = "<group>"; };
-		1BD911F92321373900B45524 /* QNBleDeviceDiscoveryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleDeviceDiscoveryProtocol.h; sourceTree = "<group>"; };
-		1BD911FA2321373900B45524 /* QNHealthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHealthData.h; sourceTree = "<group>"; };
-		1BD911FB2321373900B45524 /* QNScaleStoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNScaleStoreData.h; sourceTree = "<group>"; };
-		1BD911FC2321373900B45524 /* QNDeviceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDeviceSDK.h; sourceTree = "<group>"; };
-		1BD911FD2321373900B45524 /* QNConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNConfig.h; sourceTree = "<group>"; };
-		1BD911FE2321373A00B45524 /* QNBleStateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBleStateProtocol.h; sourceTree = "<group>"; };
-		1BD911FF2321373A00B45524 /* QNBandBaseConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandBaseConfig.h; sourceTree = "<group>"; };
-		1BD912002321373A00B45524 /* QNAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNAlarm.h; sourceTree = "<group>"; };
-		1BD912012321373A00B45524 /* QNBandEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNBandEventProtocol.h; sourceTree = "<group>"; };
+		1B939D232327C35A00FA7B81 /* 123456789.qn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 123456789.qn; sourceTree = "<group>"; };
 		1BF622632317AA68005DD780 /* syd8811_band_v1.3.1.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = syd8811_band_v1.3.1.bin; sourceTree = "<group>"; };
 		D20DE15F22EAFE240059C069 /* libQNDeviceSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQNDeviceSDK.a; path = "../../../../../../System/Volumes/Data/Users/donyau/Yolanda/program/SDK/SDK-Band-iOS/QNBandSDK/libQNDeviceSDK.a"; sourceTree = "<group>"; };
 		D21301D022EAE595007077EA /* QNBandSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QNBandSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +133,6 @@
 		D21301DE22EAE595007077EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D21301E022EAE595007077EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21301E122EAE595007077EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D213022E22EAE902007077EA /* 123456789.qn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 123456789.qn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20DE16022EAFE240059C069 /* libQNDeviceSDK.a in Frameworks */,
-				1BD912032321373A00B45524 /* libQNDeviceSDK.a in Frameworks */,
+				1B3CFF8C2327D34D006BCDB3 /* libQNDeviceSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +209,8 @@
 		D21301D122EAE595007077EA /* QNBandSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1B939D232327C35A00FA7B81 /* 123456789.qn */,
 				1BF622632317AA68005DD780 /* syd8811_band_v1.3.1.bin */,
-				D213022E22EAE902007077EA /* 123456789.qn */,
 				1B59F77822EE8EBC009A3919 /* AppDelegate.h */,
 				1B59F79E22EE8EBD009A3919 /* AppDelegate.m */,
 				D21301DB22EAE595007077EA /* Assets.xcassets */,
@@ -243,34 +243,34 @@
 		D213028322EAF7F9007077EA /* QNBandSDK */ = {
 			isa = PBXGroup;
 			children = (
-				1BD911F62321373900B45524 /* libQNDeviceSDK.a */,
-				1BD912002321373A00B45524 /* QNAlarm.h */,
-				1BD911FF2321373A00B45524 /* QNBandBaseConfig.h */,
-				1BD912012321373A00B45524 /* QNBandEventProtocol.h */,
-				1BD911ED2321373800B45524 /* QNBandInfo.h */,
-				1BD911F02321373800B45524 /* QNBandManager.h */,
-				1BD911F42321373800B45524 /* QNBandMetrics.h */,
-				1BD911F52321373800B45524 /* QNBleApi.h */,
-				1BD911EF2321373800B45524 /* QNBleConnectionChangeProtocol.h */,
-				1BD911EE2321373800B45524 /* QNBleDevice.h */,
-				1BD911F92321373900B45524 /* QNBleDeviceDiscoveryProtocol.h */,
-				1BD911FE2321373A00B45524 /* QNBleStateProtocol.h */,
-				1BD911E62321373800B45524 /* QNCallBackConst.h */,
-				1BD911E92321373800B45524 /* QNCleanInfo.h */,
-				1BD911FD2321373900B45524 /* QNConfig.h */,
-				1BD911F22321373800B45524 /* QNDataProtocol.h */,
-				1BD911FC2321373900B45524 /* QNDeviceSDK.h */,
-				1BD911F12321373800B45524 /* QNErrorCode.h */,
-				1BD911FA2321373900B45524 /* QNHealthData.h */,
-				1BD911EC2321373800B45524 /* QNRealTimeData.h */,
-				1BD911EB2321373800B45524 /* QNScaleData.h */,
-				1BD911EA2321373800B45524 /* QNScaleItemData.h */,
-				1BD911FB2321373900B45524 /* QNScaleStoreData.h */,
-				1BD911F82321373900B45524 /* QNSitRemind.h */,
-				1BD911E72321373800B45524 /* QNThirdRemind.h */,
-				1BD911F72321373900B45524 /* QNUser.h */,
-				1BD911E82321373800B45524 /* QNWeek.h */,
-				1BD911F32321373800B45524 /* README.md */,
+				1B3CFF712327D349006BCDB3 /* libQNDeviceSDK.a */,
+				1B3CFF7C2327D34B006BCDB3 /* QNAlarm.h */,
+				1B3CFF892327D34D006BCDB3 /* QNBandBaseConfig.h */,
+				1B3CFF822327D34C006BCDB3 /* QNBandEventProtocol.h */,
+				1B3CFF7D2327D34B006BCDB3 /* QNBandInfo.h */,
+				1B3CFF8B2327D34D006BCDB3 /* QNBandManager.h */,
+				1B3CFF7B2327D34B006BCDB3 /* QNBandMetrics.h */,
+				1B3CFF812327D34B006BCDB3 /* QNBleApi.h */,
+				1B3CFF872327D34C006BCDB3 /* QNBleConnectionChangeProtocol.h */,
+				1B3CFF842327D34C006BCDB3 /* QNBleDevice.h */,
+				1B3CFF8A2327D34D006BCDB3 /* QNBleDeviceDiscoveryProtocol.h */,
+				1B3CFF882327D34D006BCDB3 /* QNBleStateProtocol.h */,
+				1B3CFF7F2327D34B006BCDB3 /* QNCallBackConst.h */,
+				1B3CFF852327D34C006BCDB3 /* QNCleanInfo.h */,
+				1B3CFF792327D34A006BCDB3 /* QNConfig.h */,
+				1B3CFF782327D34A006BCDB3 /* QNDataProtocol.h */,
+				1B3CFF752327D34A006BCDB3 /* QNDeviceSDK.h */,
+				1B3CFF732327D349006BCDB3 /* QNErrorCode.h */,
+				1B3CFF7E2327D34B006BCDB3 /* QNHealthData.h */,
+				1B3CFF742327D349006BCDB3 /* QNRealTimeData.h */,
+				1B3CFF722327D349006BCDB3 /* QNScaleData.h */,
+				1B3CFF802327D34B006BCDB3 /* QNScaleItemData.h */,
+				1B3CFF7A2327D34A006BCDB3 /* QNScaleStoreData.h */,
+				1B3CFF762327D34A006BCDB3 /* QNSitRemind.h */,
+				1B3CFF832327D34C006BCDB3 /* QNThirdRemind.h */,
+				1B3CFF862327D34C006BCDB3 /* QNUser.h */,
+				1B3CFF702327D349006BCDB3 /* QNWeek.h */,
+				1B3CFF772327D34A006BCDB3 /* README.md */,
 			);
 			path = QNBandSDK;
 			sourceTree = "<group>";
@@ -338,8 +338,8 @@
 				1BF622642317AA68005DD780 /* syd8811_band_v1.3.1.bin in Resources */,
 				D21301DF22EAE595007077EA /* LaunchScreen.storyboard in Resources */,
 				D21301DC22EAE595007077EA /* Assets.xcassets in Resources */,
-				D213022F22EAE902007077EA /* 123456789.qn in Resources */,
-				1BD912022321373A00B45524 /* README.md in Resources */,
+				1B939D242327C35A00FA7B81 /* 123456789.qn in Resources */,
+				1B3CFF8D2327D34D006BCDB3 /* README.md in Resources */,
 				1B59F7AE22EE8EBD009A3919 /* SetListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BV3EPFW3GV;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QNBandSDKDemo/QNBand-PrefixHeader.pch";
 				INFOPLIST_FILE = QNBandSDKDemo/Info.plist;
@@ -529,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BV3EPFW3GV;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QNBandSDKDemo/QNBand-PrefixHeader.pch";
 				INFOPLIST_FILE = QNBandSDKDemo/Info.plist;
