@@ -21,6 +21,7 @@
 typedef NS_ENUM(NSUInteger, QNBandSetType) {
     
     QNBandSetBind = 0,
+    QNBandSetBreakBind,
     QNBandSetCancelBind,
     QNBandSetCheckMac,
     QNBandSetVersionElectric,
@@ -73,6 +74,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     self.topConstraint.constant = QNMinTopOffset;
     
     self.dataSource = @[@{QNCellTitle:@"绑定", QNCellType: @(QNBandSetBind)},
+                        @{QNCellTitle:@"中断绑定", QNCellType: @(QNBandSetBreakBind)},
                         @{QNCellTitle:@"取消绑定", QNCellType: @(QNBandSetCancelBind)},
                         @{QNCellTitle:@"检测是否同一台手机连接", QNCellType: @(QNBandSetCheckMac)},
                         @{QNCellTitle:@"手环相关信息", QNCellType: @(QNBandSetVersionElectric)},
@@ -189,7 +191,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     }else if (type == QNBandSetHealthData) {
         HealthDataCell *cell = [tableView dequeueReusableCellWithIdentifier:SetListHealthDataCellIdentifier];
         if (cell == nil) {
-            cell = [[HealthDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SetListExerciseModeCellIdentifier];
+            cell = [[HealthDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SetListHealthDataCellIdentifier];
         }
         cell.delegate = self;
         cell.dataType = self.healthType;
@@ -248,11 +250,11 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
 
 - (void)synHealthData {
     if (self.isTodayData) {
-        [[QNBleApi sharedBleApi].getBandManager syncTodayHealthDataWithHealthDataType:self.healthType callblock:^(id obj, NSError *error) {
+        [[QNBleApi sharedBleApi].getBandManager syncTodayHealthDataWithHealthDataType:self.healthType callback:^(id obj, NSError *error) {
             [self alertError:error];
         }];
     }else {
-        [[QNBleApi sharedBleApi].getBandManager syncHistoryHealthDataWithHealthDataType:self.healthType callblock:^(id obj, NSError *error) {
+        [[QNBleApi sharedBleApi].getBandManager syncHistoryHealthDataWithHealthDataType:self.healthType callback:^(id obj, NSError *error) {
             [self alertError:error];
         }];
     }
@@ -280,7 +282,12 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
                         case QNBandBindStatusSameUser:
                             [self alertMessage:@"绑定用户成功"];
                             break;
-                            
+                        case QNBandBindStatusBeginTouchBind:
+                            [self alertMessage:@"开始长按绑定"];
+                            break;
+                        case QNBandBindStatusStopTouchBind:
+                            [self alertMessage:@"停止长按绑定"];
+                            break;
                         default:
                             break;
                     }
@@ -290,7 +297,18 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
             }];
             break;
         }
-            
+        
+        case QNBandSetBreakBind: {
+            [bandManager cancelBindBandWithCallback:^(id obj, NSError *error) {
+                if (error) {
+                    [self alertError:error];
+                }else {
+                    [self alertMessage:[obj boolValue] ? @"中断绑定成功" : @"中断绑定失败"];
+                }
+            }];
+            break;
+        }
+        
         case QNBandSetCancelBind:
         {
             [bandManager cancelBindWithUserId:QNUserId callback:^(id obj, NSError *error) {
@@ -519,7 +537,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
                     [self alertError:error];
                 }else {
                     QNRealTimeData *data = (QNRealTimeData*)obj;
-                    [self alertMessage:[NSString stringWithFormat:@"步数: %ld 距离:%lu 卡路里: %lu 运动时间: %lu 心率: %lu 睡眠时间: %lu",data.step,(unsigned long)data.distance,(unsigned long)data.calories,(unsigned long)data.active,(unsigned long)data.heartRate,(unsigned long)data.sleep]];
+                    [self alertMessage:[NSString stringWithFormat:@"步数: %lu 距离:%lu 卡路里: %lu 运动时间: %lu 心率: %lu 睡眠时间: %lu",(unsigned long)data.step,(unsigned long)data.distance,(unsigned long)data.calories,(unsigned long)data.active,(unsigned long)data.heartRate,(unsigned long)data.sleep]];
                 }
             }];
             break;
@@ -538,15 +556,15 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
                 data.distance = 1000;
             }
             
-            [bandManager sendExerciseData:data callblock:^(id obj, NSError *error) {
+            [bandManager sendExerciseData:data callback:^(id obj, NSError *error) {
                 if (error) {
                     [self alertError:error];
                 }else {
                     QNExerciseData *receiveData = obj;
                     if (self.exerciseType == QNBandExerciseWalk || self.exerciseType == QNBandExerciseRunning) {
-                        [self alertMessage:[NSString stringWithFormat:@"步数 %ld\n卡路里: %ld\n距离: %ld\n运动时长: %ld\n配速: %ld\n心率: %ld",receiveData.step,receiveData.calories,receiveData.distance,receiveData.exerciseTime,receiveData.minkm,receiveData.heartRate]];
+                        [self alertMessage:[NSString stringWithFormat:@"步数 %lu\n卡路里: %lu\n距离: %lu\n运动时长: %lu\n配速: %lu\n心率: %lu",(unsigned long)receiveData.step,(unsigned long)receiveData.calories,(unsigned long)receiveData.distance,(unsigned long)receiveData.exerciseTime,(unsigned long)receiveData.minkm,(unsigned long)receiveData.heartRate]];
                     }else {
-                        [self alertMessage:[NSString stringWithFormat:@"卡路里: %ld\n运动时长: %ld\n心率: %ld",receiveData.calories,receiveData.exerciseTime,receiveData.heartRate]];
+                        [self alertMessage:[NSString stringWithFormat:@"卡路里: %lu\n运动时长: %lu\n心率: %lu",(unsigned long)receiveData.calories,(unsigned long)receiveData.exerciseTime,(unsigned long)receiveData.heartRate]];
                     }
                 }
             }];

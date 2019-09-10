@@ -49,33 +49,41 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
 /**
  设备解绑时，需要调用该方法
 
- @param callblock 结果的回调 void(^QNObjCallback) (NSNumber *success, NSError *error)
+ @param callback 结果的回调 void(^QNObjCallback) (NSNumber *success, NSError *error)
  */
-- (void)cancelBindWithUserId:(NSString *)userId callback:(QNObjCallback)callblock;
+- (void)cancelBindWithUserId:(NSString *)userId callback:(QNObjCallback)callback;
+
+/**
+ 中断绑定操作
+
+ @param callback 结果的回调 void(^QNObjCallback) (NSNumber *success, NSError *error)
+ */
+- (void)cancelBindBandWithCallback:(QNObjCallback)callback;
+
 
 /**
  检测手环的上次
 
- @param callblock 结果的回调 void(^QNObjCallback) (NSNumber *same, NSError *error)
+ @param callback 结果的回调 void(^QNObjCallback) (NSNumber *same, NSError *error)
  */
-- (void)checkSameBindPhone:(QNObjCallback)callblock;
+- (void)checkSameBindPhone:(QNObjCallback)callback;
 
 /**
  手环的固件版本、软件版本、电量
  
  该方法不受绑定绑定的影响，即未绑定时也可以使用
 
- @param callblock 结果的回调 void(^QNObjCallback) (QNBandInfo *info, NSError *error)
+ @param callback 结果的回调 void(^QNObjCallback) (QNBandInfo *info, NSError *error)
  */
-- (void)fetchBandInfo:(QNObjCallback)callblock;
+- (void)fetchBandInfo:(QNObjCallback)callback;
 
 /**
  设置手环时间
 
  @param date 时间
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncBandTimeWithDate:(NSDate *)date callback:(QNResultCallback)callblock;
+- (void)syncBandTimeWithDate:(NSDate *)date callback:(QNResultCallback)callback;
 
 /**
  设置闹钟详情
@@ -83,91 +91,91 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  目前最多支持10个闹钟
 
  @param alarm QNAlarm
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncAlarm:(QNAlarm *)alarm callback:(QNResultCallback)callblock;
+- (void)syncAlarm:(QNAlarm *)alarm callback:(QNResultCallback)callback;
 
 /**
  运动目标
 
  @param stepGoal 运动目标
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncGoal:(int)stepGoal callback:(QNResultCallback)callblock;
+- (void)syncGoal:(int)stepGoal callback:(QNResultCallback)callback;
 
 /**
  用户信息
 
  @param user QNUser
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncUser:(QNUser *)user callback:(QNResultCallback)callblock;
+- (void)syncUser:(QNUser *)user callback:(QNResultCallback)callback;
 
 /**
  设置单位、语言、时间制式
 
  @param metrics QNBandMetrics
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncMetrics:(QNBandMetrics *)metrics callback:(QNResultCallback)callblock;
+- (void)syncMetrics:(QNBandMetrics *)metrics callback:(QNResultCallback)callback;
 
 /**
  久坐提醒
 
  @param sitRemind QNSitRemind
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncSitRemind:(QNSitRemind *)sitRemind callback:(QNResultCallback)callblock;
+- (void)syncSitRemind:(QNSitRemind *)sitRemind callback:(QNResultCallback)callback;
 
 /**
  心率的监听模式
 
  @param autoFlag YES 自动 NO 手动
  @param interval 心率提醒间隔 (单位分钟)
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncHeartRateObserverModeWithAutoFlag:(BOOL)autoFlag interval:(int)interval callback:(QNResultCallback)callblock;
+- (void)syncHeartRateObserverModeWithAutoFlag:(BOOL)autoFlag interval:(int)interval callback:(QNResultCallback)callback;
 
 
 /**
  查找手机开关
 
  @param openFlag YES 开启 NO 关闭
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncFindPhoneWithOpenFlag:(BOOL)openFlag callback:(QNResultCallback)callblock;
+- (void)syncFindPhoneWithOpenFlag:(BOOL)openFlag callback:(QNResultCallback)callback;
 
 /**
  相机模式
 
  @param openFlag YES 进入拍照模式 NO 退出拍照模式
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncCameraModeWithEnterFlag:(BOOL)openFlag callback:(QNResultCallback)callblock;
+- (void)syncCameraModeWithEnterFlag:(BOOL)openFlag callback:(QNResultCallback)callback;
 
 /**
  抬腕识别模式
 
  @param openFlag YES 开启抬腕亮屏 NO 关闭抬腕亮屏
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncHandRecognizeModeWithOpenFlag:(BOOL)openFlag callback:(QNResultCallback)callblock;
+- (void)syncHandRecognizeModeWithOpenFlag:(BOOL)openFlag callback:(QNResultCallback)callback;
 
 /**
  第三方提醒
 
  @param thirdRemind 第三方提醒
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)setThirdRemind:(QNThirdRemind *)thirdRemind callback:(QNResultCallback)callblock;
+- (void)setThirdRemind:(QNThirdRemind *)thirdRemind callback:(QNResultCallback)callback;
 
 /**
  清除设置
 
  @param cleanInfo QNCleanInfo
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)resetWithCleanInfo:(QNCleanInfo *)cleanInfo callback:(QNResultCallback)callblock;
+- (void)resetWithCleanInfo:(QNCleanInfo *)cleanInfo callback:(QNResultCallback)callback;
 
 
 /**
@@ -175,9 +183,9 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  
  回复出厂设置后，手环会自动重启
 
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)rebootCallback:(QNResultCallback)callblock;
+- (void)rebootCallback:(QNResultCallback)callback;
 
 /**
  快捷设置
@@ -185,16 +193,16 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  仅支持ID为0003且版本号12后续版本(包含12版本)
 
  @param baseConifg QNBandBaseConfig
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)syncFastSetting:(QNBandBaseConfig *)baseConifg callback:(QNResultCallback)callblock;
+- (void)syncFastSetting:(QNBandBaseConfig *)baseConifg callback:(QNResultCallback)callback;
 
 /**
  获取实时数据
 
- @param callblock 结果的回调 void(^QNObjCallback) (QNRealTimeData *data, NSError *error)
+ @param callback 结果的回调 void(^QNObjCallback) (QNRealTimeData *data, NSError *error)
  */
-- (void)syncRealTimeDataCallback:(QNObjCallback)callblock;
+- (void)syncRealTimeDataCallback:(QNObjCallback)callback;
 
 
 /**
@@ -202,18 +210,18 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
 
  @param openFlag 是否打开
  @param remind 提醒值
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)setHeartRemindWithOpenFlag:(BOOL)openFlag remind:(NSUInteger)remind callback:(QNResultCallback)callblock;
+- (void)setHeartRemindWithOpenFlag:(BOOL)openFlag remind:(NSUInteger)remind callback:(QNResultCallback)callback;
 
 /**
  设置运动(锻炼)状态
 
  @param exerciseStatus 运动状态
  @param exerciseType 锻炼类型
- @param callblock  结果的回调
+ @param callback  结果的回调
  */
-- (void)setExerciseStatus:(QNExerciseStatus)exerciseStatus exerciseType:(QNBandExerciseType)exerciseType callback:(QNResultCallback)callblock;
+- (void)setExerciseStatus:(QNExerciseStatus)exerciseStatus exerciseType:(QNBandExerciseType)exerciseType callback:(QNResultCallback)callback;
 
 /**
  确认是否修改锻炼状态
@@ -221,9 +229,9 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  @param agree 是否同意
  @param exerciseStatus 锻炼的状态
  @param exerciseType 锻炼类型
- @param callblock 结果的回调
+ @param callback 结果的回调
  */
-- (void)confirmBandModifyExerciseStatusWithAgree:(BOOL)agree exerciseStatus:(QNBandExerciseStatus)exerciseStatus exerciseType:(QNBandExerciseType)exerciseType callback:(QNResultCallback)callblock;
+- (void)confirmBandModifyExerciseStatusWithAgree:(BOOL)agree exerciseStatus:(QNBandExerciseStatus)exerciseStatus exerciseType:(QNBandExerciseType)exerciseType callback:(QNResultCallback)callback;
 
 /**
  发送运动数据
@@ -231,7 +239,7 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  @param exerciseData 运动数据
  @param callback  结果的回调 (QNExerciseData *data, NSError *error)
  */
-- (void)sendExerciseData:(QNExerciseData *)exerciseData callblock:(QNObjCallback)callback;
+- (void)sendExerciseData:(QNExerciseData *)exerciseData callback:(QNObjCallback)callback;
 
 
 /**
@@ -250,7 +258,7 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  @param healthDataType 健康数据类型
  @param callback 结果的回调  运动数据 QNSport 睡眠数据 QNSleep  心率数据 QNHeartRate  锻炼的数据 QNExercise
  */
-- (void)syncTodayHealthDataWithHealthDataType:(QNHealthDataType)healthDataType callblock:(QNObjCallback)callback;
+- (void)syncTodayHealthDataWithHealthDataType:(QNHealthDataType)healthDataType callback:(QNObjCallback)callback;
 
 /**
  同步历史数据
@@ -258,7 +266,7 @@ typedef NS_ENUM(NSUInteger, QNExerciseStatus) {
  @param healthDataType 健康数据类型
  @param callback 结果的回调  运动数据 [QNSport] 睡眠数据 [QNSleep]  心率数据 [QNHeartRate]  锻炼的数据 [QNExercise]
  */
-- (void)syncHistoryHealthDataWithHealthDataType:(QNHealthDataType)healthDataType callblock:(QNObjCallback)callback;
+- (void)syncHistoryHealthDataWithHealthDataType:(QNHealthDataType)healthDataType callback:(QNObjCallback)callback;
 
 @end
 

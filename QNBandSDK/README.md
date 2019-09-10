@@ -1,3 +1,9 @@
+【 1.0.0-beta.16 】 2019-09-10
+1.  增加绑定状态 QNBandBindStatusBeginTouchBind、QNBandBindStatusStopTouchBind
+2. 增加中断绑定的方法 cancelBindBand
+3. 修复步行、跑步解析错误的缺陷
+4. 变更【syncTodayHealthDataWithHealthDataType:callblock:】方法为【syncTodayHealthDataWithHealthDataType:callback:】
+
 【 1.0.0-beta.15 】 2019-09-05
 1.  优化手环连接方式
 
