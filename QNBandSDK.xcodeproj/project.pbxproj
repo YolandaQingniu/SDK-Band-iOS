@@ -504,7 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BV3EPFW3GV;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QNBandSDKDemo/QNBand-PrefixHeader.pch";
 				INFOPLIST_FILE = QNBandSDKDemo/Info.plist;
@@ -529,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BV3EPFW3GV;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QNBandSDKDemo/QNBand-PrefixHeader.pch";
 				INFOPLIST_FILE = QNBandSDKDemo/Info.plist;
