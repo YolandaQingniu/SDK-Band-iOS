@@ -7,7 +7,6 @@
 //  Copyright © 2018年 Yolanda. All rights reserved.
 //
 
-
 typedef NS_ENUM(NSUInteger, QNBandBindStatus) {
     QNBandBindStatusUnknow = 0,
     QNBandBindStatusNewUser = 100, //设备绑定新用户成功
@@ -18,6 +17,7 @@ typedef NS_ENUM(NSUInteger, QNBandBindStatus) {
 };
 
 typedef void(^QNResultCallback) (NSError *error);
+typedef void(^QNResultCallback) (NSError *error);
 typedef void(^QNObjCallback) (id obj, NSError *error);
 typedef void(^QNBindResultCallback) (QNBandBindStatus bindStatus, NSError *error);
-typedef void(^QNBindOnConfirmCallback) (void); 
+typedef void(^QNBindOnConfirmCallback) (void);

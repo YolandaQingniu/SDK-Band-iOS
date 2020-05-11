@@ -129,7 +129,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     
     self.titleLabel.text = @"正在连接";
     [[QNBleApi sharedBleApi] startBleDeviceDiscovery:^(NSError *error) {
-        
+
     }];
     
     //已经和系统配对的设置，需要从系统蓝牙列表中获取
@@ -147,7 +147,7 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     user.height = 170;
     user.gender = @"female";
     user.birthday = [NSDate dateWithTimeIntervalSince1970:649043924];
-    
+    user.weight = 75;
     [[QNBleApi sharedBleApi] stopBleDeviceDiscorvery:^(NSError *error) {
         
     }];
@@ -156,20 +156,19 @@ typedef NS_ENUM(NSUInteger, QNBandSetType) {
     }];
 }
 
-- (void)onDeviceStateChange:(QNBleDevice *)device scaleState:(QNDeviceState)state {
+- (void)onDisconnected:(QNBleDevice *)device {
     NSString *mac = [[NSUserDefaults standardUserDefaults] objectForKey:QNBandBindMac];
     if ([device.mac isEqualToString:mac] == NO) return;
-    
-    if (state == QNDeviceStateConnected) {
-        self.titleLabel.text = @"连接成功";
-        self.currentBand = device;
-    }
-    
-    if (state == QNDeviceStateDisconnected || state == QNDeviceStateLinkLoss) {
-        self.currentBand = nil;
-        self.titleLabel.text = @"正在扫描设备";
-        [self startScan];
-    }
+    self.currentBand = nil;
+    self.titleLabel.text = @"正在扫描设备";
+    [self startScan];
+}
+
+- (void)onConnected:(QNBleDevice *)device {
+    NSString *mac = [[NSUserDefaults standardUserDefaults] objectForKey:QNBandBindMac];
+    if ([device.mac isEqualToString:mac] == NO) return;
+    self.titleLabel.text = @"连接成功";
+    self.currentBand = device;
 }
 
 #pragma mark -

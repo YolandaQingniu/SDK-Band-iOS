@@ -39,6 +39,18 @@ typedef NS_ENUM(NSInteger, QNScaleType) {
     QNScaleTypeHealthScore = 15, //分数
     QNScaleTypeHeartRate = 16, //心率
     QNScaleTypeHeartIndex = 17, //心脏指数
+    QNScaleTypeFatMassIndex = 21, //脂肪重量
+    QNScaleTypeObesityDegreeIndex = 22, //肥胖度
+    QNScaleTypeWaterContentIndex = 23, //含水量
+    QNScaleTypeProteinMassIndex = 24, //蛋白质量
+    QNScaleTypeMineralSaltIndex = 25, //无机盐状况
+    QNScaleTypeBestVisualWeightIndex = 26, //理想视觉体重
+    QNScaleTypeStandWeightIndex = 27, //标准体重
+    QNScaleTypeWeightControlIndex = 28, //体重控制
+    QNScaleTypeFatControlIndex = 29, //脂肪控制
+    QNScaleTypeMuscleControlIndex = 30, //肌肉控制
+    QNScaleTypeMuscleMassRate = 31, //肌肉率
+    QNScaleTypeFattyLiverRisk = 32, //脂肪肝风险等级
 };
 
 @interface QNScaleItemData : NSObject
@@ -46,7 +58,11 @@ typedef NS_ENUM(NSInteger, QNScaleType) {
 /** 指标类型 */
 @property (nonatomic, readonly, assign) QNScaleType type;
 
-/** 指标数值 */
+/**  */
+
+
+/** 指标数值
+ */
 @property (nonatomic, readonly, assign) double value;
 
 /** 指标值类型 */

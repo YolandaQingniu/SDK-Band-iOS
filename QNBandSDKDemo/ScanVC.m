@@ -45,7 +45,7 @@
 }
 
 - (void)onDeviceDiscover:(QNBleDevice *)device {
-    if (device.deviceType != QNDeviceBand) {
+    if (device.deviceType != QNDeviceTypeBand) {
         return;
     }
     [self.devices addObject:device];

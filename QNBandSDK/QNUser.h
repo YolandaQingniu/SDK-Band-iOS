@@ -39,8 +39,10 @@ typedef NS_ENUM(NSUInteger,YLAthleteType) {
 @property (nonatomic, assign) int height;
 /** gender : male or female */
 @property (nonatomic, strong) NSString *gender;
-/** brithday */
+/** birthday */
 @property (nonatomic, strong) NSDate *birthday;
+/** clothesWeight */
+@property (nonatomic, assign) double clothesWeight;
 /**
  设置使用算法的类型
  1表示运动员算法，0是普通算法
@@ -52,7 +54,12 @@ typedef NS_ENUM(NSUInteger,YLAthleteType) {
 @property (nonatomic, assign) YLUserShapeType shapeType;
 /** 用户目标 */
 @property (nonatomic, assign) YLUserGoalType goalType;
-/** 手环专用属性，在连接以及设置用户信息时，必须设置 */
+
+/** WSP设备专用，秤端该用户索引，该值由向秤注册用户成功时，秤端返回 */
+@property (nonatomic, assign) int index;
+/** WSP设备专用，秤端该用户秘钥，该秘钥由服务器下发 */
+@property (nonatomic, assign) int secret;
+/** 手环专用属性，连接手环时的用户参数中，该项必填 */
 @property (nonatomic, assign) double weight;
 
 /**
@@ -65,8 +72,7 @@ typedef NS_ENUM(NSUInteger,YLAthleteType) {
  @param callback 结果的回调
  @return QNUser
  */
-+ (QNUser *)buildUserId:(NSString *)userId height:(int)height gender:(NSString *)gender birthday:(NSDate *)birthday callback:(QNResultCallback)callback NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "请自行构建对象");
-
++ (QNUser *)buildUserId:(NSString *)userId height:(int)height gender:(NSString *)gender birthday:(NSDate *)birthday callback:(QNResultCallback)callback NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "0.5.2版本开始不必使用指定的构建方法");
 
 /**
  建立用户模型
@@ -79,7 +85,7 @@ typedef NS_ENUM(NSUInteger,YLAthleteType) {
  @param callback 结果的回调
  @return QNUser
  */
-+ (QNUser *)buildUserId:(NSString *)userId height:(int)height gender:(NSString *)gender birthday:(NSDate *)birthday athleteType:(YLAthleteType)athleteType callback:(QNResultCallback)callback NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "请自行构建对象");
++ (QNUser *)buildUserId:(NSString *)userId height:(int)height gender:(NSString *)gender birthday:(NSDate *)birthday athleteType:(YLAthleteType)athleteType callback:(QNResultCallback)callback NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "0.5.2版本开始不必使用指定的构建方法");
 
 /**
  建立用户模型
@@ -94,7 +100,7 @@ typedef NS_ENUM(NSUInteger,YLAthleteType) {
  @param callback 回调
  @return QNUser
  */
-+ (QNUser *)buildUserId:(NSString *)userId height:(int)height gender:(NSString *)gender birthday:(NSDate *)birthday athleteType:(YLAthleteType)athleteType shapeType:(YLUserShapeType)shapeType goalType:(YLUserGoalType)goalType callback:(QNResultCallback)callback NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "请自行构建对象");
++ (QNUser *)buildUserId:(NSString *)userId height:(int)height gender:(NSString *)gender birthday:(NSDate *)birthday athleteType:(YLAthleteType)athleteType shapeType:(YLUserShapeType)shapeType goalType:(YLUserGoalType)goalType callback:(QNResultCallback)callback NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, "0.5.2版本开始不必使用指定的构建方法");
 
 
 @end

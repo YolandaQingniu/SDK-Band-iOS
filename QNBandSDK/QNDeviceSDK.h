@@ -16,11 +16,11 @@ FOUNDATION_EXPORT const unsigned char QNDeviceSDKVersionString[];
 
 #import "QNErrorCode.h"
 #import "QNBleApi.h"
-#import "QNDataProtocol.h"
+#import "QNScaleDataProtocol.h"
+#import "QNLogProtocol.h"
 #import "QNBleStateProtocol.h"
 #import "QNBleDeviceDiscoveryProtocol.h"
 #import "QNBleConnectionChangeProtocol.h"
-#import "QNBandEventProtocol.h"
 #import "QNBleDevice.h"
 #import "QNUser.h"
 #import "QNScaleData.h"
@@ -28,6 +28,15 @@ FOUNDATION_EXPORT const unsigned char QNDeviceSDKVersionString[];
 #import "QNScaleStoreData.h"
 #import "QNConfig.h"
 #import "QNCallBackConst.h"
+#import "QNUtils.h"
+#import "QNWiFiConfig.h"
+#import "QNBleBroadcastDevice.h"
+#import "QNBleKitchenDevice.h"
+#import "QNBleProtocolDelegate.h"
+#import "QNBleProtocolHandler.h"
+#import "QNWspConfig.h"
+#import "QNWspScaleDataProtocol.h"
+#import "QNBandEventProtocol.h"
 #import "QNBandManager.h"
 #import "QNBandInfo.h"
 #import "QNAlarm.h"
@@ -39,6 +48,5 @@ FOUNDATION_EXPORT const unsigned char QNDeviceSDKVersionString[];
 #import "QNBandBaseConfig.h"
 #import "QNHealthData.h"
 #import "QNRealTimeData.h"
-
 
 

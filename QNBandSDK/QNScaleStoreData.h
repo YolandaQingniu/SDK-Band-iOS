@@ -13,7 +13,7 @@
 /**
  该类为秤端存储数据类
  
- 存储数据通过数据代理(QNDataProtocol)回调 "- (void)onGetStoredScale:(QNBleDevice *)device data:(NSArray <QNScaleStoreData *> *)storedDataList"
+ 存储数据通过数据代理(QNScaleDataProtocol)回调 "- (void)onGetStoredScale:(QNBleDevice *)device data:(NSArray <QNScaleStoreData *> *)storedDataList"
  
  
  存储数据的产生的说明:
@@ -41,13 +41,23 @@
 /** 储存数据的测量时间 */
 @property (nonatomic, readonly, strong) NSDate *measureTime;
 
+/** 储存数据所属秤的mac地址 */
+@property (nonatomic, readonly, strong) NSString *mac;
+
+/** 数据是否完整 */
+@property (nonatomic, readonly, assign) BOOL isDataComplete;
+
+/** 相关加密字符串 */
+@property (nonatomic, readonly, strong) NSString *hmac;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  设置该存储数据的拥有者
 
  @param user QNUser
  */
-- (void)setUser:(QNUser *)user;
+- (BOOL)setUser:(QNUser *)user;
 
 /**
  获取测量数据详情
@@ -57,5 +67,20 @@
  @return QNScaleData
  */
 - (QNScaleData *)generateScaleData;
+
+
+/**
+ 构建存储数据对象
+ 
+ 用于用轻牛云中获取WiFi蓝牙双模设备的未知测量数据从而构建对象
+
+ @param weight 以KG为单位的体重
+ @param measureTime 测量时间
+ @param mac 测量的秤mac地址
+ @param hmac 相关加密字符串
+ @param callback 构建结构的回调
+ @return QNScaleStoreData
+ */
++ (QNScaleStoreData *)buildStoreDataWithWeight:(double)weight measureTime:(NSDate *)measureTime mac:(NSString *)mac hmac:(NSString *)hmac callBlock:(QNResultCallback)callback;
 
 @end

@@ -21,8 +21,12 @@ typedef NS_ENUM(NSUInteger, QNUnit) {
     QNUnitLB = 1,
     QNUnitJIN = 2,
     QNUnitST = 3,
+    
+    QNUnitG = 10, //厨房秤专属
+    QNUnitML = 11, //厨房秤专属
+    QNUnitOZ = 12, //厨房秤专属
+    QNUnitLBOZ = 13, //厨房秤专属
 };
-
 
 /**
  扫描类型
@@ -40,13 +44,12 @@ typedef NS_ENUM(NSUInteger, QNScanType) {
 /**
  该QNConfig类，用户设置后，SDK会自动保存设置信息，当再次用到类中的设置信息时，会采用用户上次设置的信息
  */
-
 @interface QNConfig : NSObject
 
 /** 是否只返回已开机（亮屏）的设备，默认为false */
 @property (nonatomic, assign) BOOL onlyScreenOn;
 
-/** 同一个设备是否返回多次，默认为false */
+/** 同一个设备是否返回多次，默认为false , 该设置对广播秤无效*/
 @property (nonatomic, assign) BOOL allowDuplicates;
 
 /**
@@ -55,16 +58,26 @@ typedef NS_ENUM(NSUInteger, QNScanType) {
  */
 @property (nonatomic, assign) int duration;
 
-/** 端显示的单位，不设置的话，SDK默认为kg，设置后会保存本地，如果当前已经连接设备，会尽量实时更新秤端的单位显示 */
+/** 端显示的单位，不设置的话，SDK默认为kg，设置后会保存本地，如果当前已经连接设备，会尽量实时更新秤端的单位显示 ，该设置对广播秤无效，广播秤修改单位请前往【QNBleBroadcastDevice】*/
 @property (nonatomic, assign) QNUnit unit;
-
-/** 设置扫描对象 */
-@property (nonatomic, assign) QNScanType scanType;
 
 /**
  该设置只有在 调用 "- (void)initSdk:(NSString *)appId firstDataFile:(NSString *)dataFile callback:(QNResultCallback)callback" 方法前设置才有效，若在调用该方法后面再设置，SDK会在下次重新启动SDK的时候自动配置该设置.
  该属性的作用详情请参考Apple Developer Documenttation => CoreBluetooth => CBCentralManager =>  Central Manager Initialization Options
  */
 @property (nonatomic, assign) BOOL showPowerAlertKey;
+
+/** 设置扫描对象 */
+@property (nonatomic, assign) QNScanType scanType;
+
+/**
+ 强化广播秤信号
+ */
+@property (nonatomic, assign) BOOL enhanceBleBoradcast;
+
+/// 保存设置信息
+- (BOOL)save;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end

@@ -15,6 +15,15 @@ typedef NS_ENUM(NSUInteger, QNBandExerciseStatus) {
     QNBandBindEndExercise = 3 , //设备端结束锻炼
 };
 
+typedef NS_ENUM(NSUInteger, QNBandState) {
+    QNBandStateDisconnected     = 0,  //未连接
+    QNBandStateLinkLoss         = -1, //失去连接
+    QNBandStateConnected        = 1,  //已连接
+    QNBandStateConnecting       = 2,  //正在连接
+    QNBandStateDisconnecting    = 3,  //正在断开
+    QNBandStateDeviceReady      = 4,  //设备已经准备好了，可以开始交互
+};
+
 
 @protocol QNBandEventListener <NSObject>
 @optional
@@ -48,4 +57,12 @@ typedef NS_ENUM(NSUInteger, QNBandExerciseStatus) {
  */
 - (void)onExciseStatusWithExerciseStatus:(QNBandExerciseStatus)exerciseStatus exerciseType:(QNBandExerciseType)exerciseType device:(QNBleDevice *)device;
 
+
+/**
+ 手环连接或测量状态变化
+ 
+ @param device QNBleDevice
+ @param state 状态
+ */
+- (void)onBandStateChangeWithBandState:(QNBandState)state device:(QNBleDevice *)device;
 @end
