@@ -2,7 +2,7 @@
 //  QNRealTimeData.h
 //  QNDeviceSDK
 //
-//  Created by qiudongquan on 2019/8/8.
+//  Created by Yolanda on 2019/8/8.
 //  Copyright © 2019 Yolanda. All rights reserved.
 //
 
