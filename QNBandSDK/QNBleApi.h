@@ -194,7 +194,7 @@
 /**
  断开设备的连接
  
- @param device 当前连接的设备(可不传)
+ @param device 当前连接的设备(如果参数为nil，则只会断开秤不会断开手环)
  @param callback 结果回调
  */
 - (void)disconnectDevice:(QNBleDevice *)device callback:(QNResultCallback)callback;
